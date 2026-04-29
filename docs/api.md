@@ -3,7 +3,6 @@
 
 ## Auth
 POST /login
-POST / register
 
 ## Conta
 POST /conta/deposito
