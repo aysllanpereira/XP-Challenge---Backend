@@ -7,12 +7,17 @@ class ClienteService {
 
     async getClientes() {
         return await Cliente.findAll();
-    }
+    };
 
     async getClientePorId(id) {
         return await Cliente.findByPk(id)
-    }
+    };
 
+    async getClientePorEmail(email) {
+        return await Cliente.findOne({
+            where: { email }
+        });
+    };
 
 }
 

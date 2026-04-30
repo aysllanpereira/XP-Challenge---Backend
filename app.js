@@ -13,13 +13,17 @@ require('./src/models/investimento.model');
 const contaRoutes = require('./src/routes/conta.routes');
 const investimentoRoutes = require('./src/routes/investimento.routes');
 const ativoRoutes = require('./src/routes/ativo.route');
+const loginRoutes = require('./src/routes/login.routes');
+const authMiddleware = require('./src/middlewares/authMiddlware');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use('/conta', contaRoutes);
+app.use('/login', loginRoutes);
+
+app.use('/conta', authMiddleware, contaRoutes);
 app.use('/investimento', investimentoRoutes);
 app.use('/ativos', ativoRoutes);
 
@@ -29,7 +33,7 @@ db.sequelize.authenticate()
   .then(() => {
     console.log('Banco conectado!');
 
-    return db.sequelize.sync({ alter: true });
+    return db.sequelize.sync();
   })
   .then(() => {
     console.log('Tabelas criadas!');
