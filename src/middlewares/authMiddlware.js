@@ -15,12 +15,8 @@ module.exports = function auth(req, res, next) {
         return res.status(401).json({ message: 'Token não fornecido' });
     }
 
-    const token = authHeader.split(' ')[1];
-
-    console.log(token);
-
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(authHeader, process.env.JWT_SECRET);
         console.log(decoded);
         req.user = decoded;
         console.log(req.user);
