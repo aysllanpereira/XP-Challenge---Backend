@@ -9,6 +9,7 @@ API backend para gerenciamento de clientes, contas e investimentos.
 * Sequelize
 * MySQL
 * JWT (autenticação)
+* Dotenv
 
 ## Funcionalidades
 
