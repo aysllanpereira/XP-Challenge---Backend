@@ -1,15 +1,15 @@
 const { Cliente } = require('../models');
 
 class ClienteService {
-    async createCliente(data) {
+    async criarCliente(data) {
         return await Cliente.create(data);
     };
 
-    async getClientes() {
+    async listarClientes() {
         return await Cliente.findAll();
     }
 
-    async getClientePorId(id) {
+    async listarClientePorId(id) {
         return await Cliente.findByPk(id)
     }
 
