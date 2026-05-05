@@ -45,5 +45,5 @@ As rotas podem ser testadas utilizando o Insomnia ou Postman.
 * models → banco de dados
 * routes → rotas da aplicação
 * middlewares → autenticação
-* utils → funções auxiliares
+* utils → funções auxiliares pro middlewares
 
